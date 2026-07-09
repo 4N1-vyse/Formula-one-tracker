@@ -1,5 +1,8 @@
+package org.example.f1tracker;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -8,16 +11,14 @@ import lombok.Data;
 public class RaceInfo {
 
     @Id
-    @GeneratedValue
-    private String TrackName;
-    private String Country;
-    private String City;
-    private String Description;
-    private Integer TrackNum;
-    private String WinningDriver;
-    private String WinningTeam;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-
-
-
+    private String trackName;
+    private String country;
+    private String city;
+    private String description;
+    private Integer trackNum;
+    private String winningDriver;
+    private String winningTeam;
 }
